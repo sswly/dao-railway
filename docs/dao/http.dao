@@ -1,0 +1,17 @@
+proc get-content-type path
+  if [string ends .xml $path]
+    return application/xml
+  if [string ends .js $path]
+    return application/javascript
+  if [string ends .css $path]
+    return text/css
+  if [string ends .csv $path]
+    return text/csv
+  if [string ends .svg $path]
+    return image/svg+xml
+  if [string ends .dat $path]
+    return application/octet-stream
+  if [any [string ends .html $path] [string ends .htm $path]]
+    return text/html
+  return text/plain
+  

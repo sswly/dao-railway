@@ -1,1 +1,2 @@
+eval http
 http-server 0.0.0.0:80
