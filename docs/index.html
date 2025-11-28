@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script type="module" src="/js/dao.js"></script>
+    </head>
+
+    <body>
+        <style>
+            dao-app {
+                width: 50%;
+                margin: 0 auto;
+            }
+            dao-layout {
+                --header-bg-color: white;
+                --menu-border: 0px;
+                --side-display: none;
+                width: 60%;
+            }
+            dao-layout span {
+                color: #038387;
+            }
+        </style>
+        <dao-app>
+            <dao-layout>
+                <span slot="title">DAO System</span>
+                <span slot="user">ssw</span>
+            </dao-layout>
+        </dao-app>
+    </body>
+</html>

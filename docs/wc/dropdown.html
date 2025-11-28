@@ -1,0 +1,62 @@
+<template>
+  <div id="dropdown-title">
+    <span>
+      <slot name="title">Title</slot>
+    </span>
+    <dao-icon name="down"></dao-icon>
+  </div>
+  <dl id="dropdown-popup-list">
+    <dd>
+      <a>item</a>
+    </dd>
+  </dl>
+  <dl id="dropdown-list">
+    <dd>
+      <a>item</a>
+    </dd>
+  </dl>
+</template>
+
+<style>
+  #dropdown-title {
+    --_border: var(--dropdown-border, 1px solid gray);
+    border: var(--_border);
+    width: 100%;
+    color: currentColor;
+    display: flex;
+  }
+  #dropdown-title span {
+    width: 90%;
+    padding: 5px 10px;
+    color: currentColor;
+  }
+  #dropdown-title dao-icon {
+    padding-top: 3px;
+    padding-right: 2px;
+  }
+  #dropdown-popup-list {
+    position: absolute !important;
+    background-color: lightblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    border: 1px solid #eee;
+    background-color: #fff;
+    margin-block-start: 5px;
+    color: black;
+    display: none;
+  }
+  #dropdown-list {
+    margin-block-start: 5px;
+    color: currentColor;
+    display: none;
+  }
+  .dropdown-item {
+    margin-inline-start: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #dropdown-list .dropdown-item {
+    padding-left: 30px;
+  }
+</style>

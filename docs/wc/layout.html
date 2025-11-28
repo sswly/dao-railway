@@ -1,0 +1,92 @@
+<template>
+  <div class="header">
+    <div id="logo"><slot name="logo"></slot></div>
+    <h1><slot name="title"></slot></h1>
+    <dao-dropdown
+      id="sys-menu"
+      data='["Profile", "Setting", "Logout"]'
+      list-style="popup-menu"
+    >
+      <div slot="title">
+        <dao-icon name="role"><slot name="user"></slot></dao-icon>
+      </div>
+    </dao-dropdown>
+  </div>
+  <div id="side"></div>
+  <div class="main">
+    <slot>Main content</slot>
+  </div>
+  <div class="footer"></div>
+</template>
+
+<style>
+  .header {
+    --_bg-color: var(--header-bg-color, #23292e);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--_bg-color);
+    justify-content: right;
+    display: flex;
+  }
+
+  .header #sys-menu {
+    --_menu-border: var(--menu-border, 1px solid gray);
+    --dropdown-border: var(--_menu-border);
+  }
+
+  .header #logo {
+    background-color: white;
+    min-width: 200px;
+  }
+
+  .header h1 {
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  #sys-menu {
+    padding: 20px;
+    color: white;
+    width: 100px;
+  }
+
+  .sys-menu-item {
+    padding-right: 20px;
+  }
+
+  #side {
+    --_side-display: var(--side-display, "block");
+    display: var(--_side-display);
+    position: fixed;
+    height: 100%;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    overflow-x: hidden;
+    color: white;
+    background-color: #23292e;
+  }
+
+  .main {
+    padding-top: 50px;
+    padding-left: 190px;
+    height: 100%;
+  }
+
+  .footer {
+    position: fixed;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    z-index: 990;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    box-shadow: -1px 0 4px rgb(0 0 0 / 12%);
+    background-color: lightgrey;
+  }
+</style>
